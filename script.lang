@@ -1,0 +1,29 @@
+FUNC addtwo 4;
+    SAVE;
+    INT 0; LARG;
+    INT 2; ADD;
+    LEAVE;
+
+START; # start of the program;
+LABL main;
+    # x = [1, 2, 3, 4];
+    INT 4; INT 3; INT 2; INT 1; INT 4; LIST; SYM x; SET;
+    SYM addtwo; LOAD; CALL; INT 100; ADD;
+
+    STR '\n'; STR 'Hello!' ; INT 2; PRINTN;
+
+    INT 0; SYM i; SET;
+
+    LABL .loop;
+        # 10 <= i;
+        SYM i; LOAD; INT 10; LTE;
+        $.endloop; JMPT;
+        SYM i; LOAD; INT 1; ADD; SYM i; SET;
+        $.loop; JMP;
+
+    LABL .endloop;
+
+
+
+
+

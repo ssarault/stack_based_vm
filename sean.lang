@@ -1,0 +1,18 @@
+FUNC setx 2;
+    SAVE;
+    INT 1; LARG;
+    SYM x;
+    INT 0; LARG;
+    OSET;
+    NONE;
+    LEAVE;
+
+START;
+    SYM x; INT 10; INT 1; OBJECT; SYM mine; SET;
+    INT 100; SWAP; INT 2; TUPL;
+    SYM setx; LOAD;
+    PRINTSTACK;
+    CALL;
+    SYM x; SYM mine; LOAD; OLOAD;
+    PRINT;
+    
